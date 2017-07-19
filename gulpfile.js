@@ -204,6 +204,10 @@ gulp.task('watch', function (cb) {
     gulp.watch(path2csWeb + 'csComp/includes/css/csStyles.scss', watchOptions, ['concat_css']);
     gulp.watch(path2csWeb + 'csComp/includes/images/*.*', watchOptions, ['include_images']);
 });
+gulp.task('watch2', function (cb) {
+    gulp.watch(path2csWeb + 'csComp/**/*.ts', watchOptions, ['tsc']);
+    gulp.watch('out/csComp/**/*.js', watchOptions, ['init']);
+});
 
 gulp.task('init', function (cb) {
     runSequence(
